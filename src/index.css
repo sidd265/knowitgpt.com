@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  }
+  
+  body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-white bg-opacity-20 text-white rounded-xl hover:bg-opacity-30 transition-all duration-200 backdrop-blur-sm border border-white border-opacity-20;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 bg-transparent text-white rounded-xl hover:bg-white hover:bg-opacity-10 transition-all duration-200 border border-white border-opacity-30;
+  }
+  
+  .chat-message {
+    @apply max-w-3xl mx-auto px-4 py-6 flex gap-4;
+  }
+  
+  .chat-bubble {
+    @apply p-4 rounded-xl max-w-none break-words;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-xl text-white placeholder-white placeholder-opacity-60 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-20 backdrop-blur-sm;
+  }
+  
+  .modal-backdrop {
+    @apply fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-50 flex items-center justify-center;
+  }
+} 
