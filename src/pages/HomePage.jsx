@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 const HomePage = () => {
   const [inputValue, setInputValue] = useState('');
+  const [showVideoBackground, setShowVideoBackground] = useState(true); // Toggle for video background
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -18,6 +19,22 @@ const HomePage = () => {
 
   return (
     <div className="min-h-screen bg-mountain-gradient relative overflow-hidden">
+      {/* Video Background */}
+      {showVideoBackground && (
+        <div className="absolute inset-0 z-0">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src="/background-video.mp4" type="video/mp4" />
+          </video>
+          {/* Video overlay for better text readability */}
+          <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+        </div>
+      )}
       {/* Navigation Header */}
       <nav className="relative z-10 px-6 py-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -47,6 +64,14 @@ const HomePage = () => {
 
           {/* Action Buttons */}
           <div className="flex items-center space-x-4">
+            {/* Video Background Toggle */}
+            <button 
+              onClick={() => setShowVideoBackground(!showVideoBackground)}
+              className="text-white hover:text-opacity-80 transition-colors text-sm"
+              title={showVideoBackground ? "Switch to gradient background" : "Switch to video background"}
+            >
+              {showVideoBackground ? "📹" : "🎨"}
+            </button>
             <button 
               onClick={() => navigate('/chat')}
               className="hidden sm:block text-white hover:text-opacity-80 transition-colors"
