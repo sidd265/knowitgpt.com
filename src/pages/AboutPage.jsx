@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const AboutPage = () => {
   const navigate = useNavigate();
+  const [showVideoBackground, setShowVideoBackground] = useState(true); // Toggle for video background
 
   // Performance data for charts
   const performanceData = [
@@ -47,22 +48,28 @@ const AboutPage = () => {
   };
 
   return (
-    <div className="min-h-screen relative overflow-hidden">
+    <div className="min-h-screen bg-mountain-gradient relative overflow-hidden">
       {/* Video Background */}
-      <video 
-        autoPlay 
-        loop 
-        muted 
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover z-0"
-      >
-        <source src="/background-video.mp4" type="video/mp4" />
-        {/* Fallback gradient if video doesn't load */}
-        <div className="absolute inset-0 bg-mountain-gradient" />
-      </video>
+      {showVideoBackground && (
+        <div className="absolute inset-0 z-0">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src="/about-video.mp4" type="video/mp4" />
+          </video>
+          {/* Video overlay for better text readability */}
+          <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+        </div>
+      )}
       
-      {/* Dark overlay for better text readability */}
-      <div className="absolute inset-0 bg-black bg-opacity-50 z-10" />
+      {/* Fallback dark overlay for gradient background */}
+      {!showVideoBackground && (
+        <div className="absolute inset-0 bg-black bg-opacity-30 z-10" />
+      )}
       {/* Navigation Header */}
       <nav className="relative z-20 px-6 py-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -98,6 +105,14 @@ const AboutPage = () => {
 
           {/* Action Buttons */}
           <div className="flex items-center space-x-4">
+            {/* Video Background Toggle */}
+            <button 
+              onClick={() => setShowVideoBackground(!showVideoBackground)}
+              className="text-white hover:text-opacity-80 transition-colors text-sm"
+              title={showVideoBackground ? "Switch to gradient background" : "Switch to video background"}
+            >
+              {showVideoBackground ? "📹" : "🎨"}
+            </button>
             <button 
               onClick={() => navigate('/chat')}
               className="hidden sm:block text-white hover:text-opacity-80 transition-colors"
