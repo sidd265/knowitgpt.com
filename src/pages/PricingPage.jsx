@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Logo from '../components/Logo';
 
 const PricingPage = () => {
   const navigate = useNavigate();
@@ -68,12 +69,7 @@ const PricingPage = () => {
       <nav className="relative z-10 px-6 py-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-white bg-opacity-20 rounded-lg flex items-center justify-center backdrop-blur-sm">
-              <span className="text-white font-bold text-lg">K</span>
-            </div>
-            <span className="text-white font-semibold text-xl">KnowItGPT</span>
-          </div>
+          <Logo size="md" />
 
           {/* Navigation Links */}
           <div className="hidden md:flex items-center space-x-8">

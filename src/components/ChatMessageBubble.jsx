@@ -1,4 +1,5 @@
 import React from 'react';
+import Logo from './Logo';
 
 const ChatMessageBubble = ({ message }) => {
   const { text, isUser, timestamp, isError } = message;
@@ -10,8 +11,8 @@ const ChatMessageBubble = ({ message }) => {
   return (
     <div className={`chat-message ${isUser ? 'justify-end' : 'justify-start'}`}>
       {!isUser && (
-        <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center flex-shrink-0">
-          <span className="text-white font-bold text-sm">K</span>
+        <div className="flex-shrink-0">
+          <Logo size="md" showText={false} />
         </div>
       )}
       

@@ -4,6 +4,7 @@ import ChatMessageBubble from '../components/ChatMessageBubble';
 import UsageCounter from '../components/UsageCounter';
 import ChatInputBar from '../components/ChatInputBar';
 import FormModal from '../components/FormModal';
+import Logo from '../components/Logo';
 import { sendPromptToGemini } from '../api/gemini';
 
 const ChatPage = () => {
@@ -115,12 +116,7 @@ const ChatPage = () => {
               </svg>
               <span className="hidden sm:inline">Back to home</span>
             </button>
-            <div className="flex items-center space-x-2">
-              <div className="w-6 h-6 bg-orange-500 rounded-md flex items-center justify-center">
-                <span className="text-white font-bold text-sm">K</span>
-              </div>
-              <span className="font-semibold">KnowItGPT</span>
-            </div>
+            <Logo size="sm" className="text-white" />
           </div>
           
           <UsageCounter 
@@ -136,8 +132,8 @@ const ChatPage = () => {
         {messages.length === 0 ? (
           <div className="flex items-center justify-center h-full px-4">
             <div className="text-center max-w-md">
-              <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-white font-bold text-2xl">K</span>
+              <div className="mx-auto mb-6">
+                <Logo size="xl" showText={false} />
               </div>
               <h2 className="text-2xl font-semibold mb-4">Hello! How can I assist you today?</h2>
               <p className="text-gray-400">
@@ -152,8 +148,8 @@ const ChatPage = () => {
             ))}
             {isLoading && (
               <div className="chat-message">
-                <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-white font-bold text-sm">K</span>
+                <div className="flex-shrink-0">
+                  <Logo size="md" showText={false} />
                 </div>
                 <div className="chat-bubble bg-chat-bot text-gray-300">
                   <div className="flex items-center space-x-1">
