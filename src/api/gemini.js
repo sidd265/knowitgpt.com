@@ -1,5 +1,5 @@
 // Gemini API Integration for KnowItGPT
-const GEMINI_API_KEY = process.env.REACT_APP_GEMINI_API_KEY || 'AIzaSyDH3t25pYyd2FIOMrLGiCK5xzl2oihI6ZU';
+const GEMINI_API_KEY = process.env.REACT_APP_GEMINI_API_KEY;
 const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent';
 
 /**
@@ -8,7 +8,7 @@ const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/
  * @returns {Promise<string>} - The AI's response
  */
 export async function sendPromptToGemini(prompt) {
-  if (!GEMINI_API_KEY || GEMINI_API_KEY === 'YOUR_GEMINI_API_KEY_HERE') {
+  if (!GEMINI_API_KEY) {
     throw new Error('Gemini API key is not configured. Please set REACT_APP_GEMINI_API_KEY in your environment.');
   }
 
@@ -70,5 +70,5 @@ ${prompt}`
  * @returns {boolean} - Whether the API is ready to use
  */
 export function isGeminiConfigured() {
-  return GEMINI_API_KEY && GEMINI_API_KEY !== 'YOUR_GEMINI_API_KEY_HERE';
+  return !!GEMINI_API_KEY;
 } 
