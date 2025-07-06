@@ -128,39 +128,43 @@ const ChatPage = () => {
       </header>
 
       {/* Chat Messages */}
-      <div className="flex-1 overflow-y-auto">
+      <div className="flex-1 overflow-y-auto flex">
         {messages.length === 0 ? (
-          <div className="flex items-center justify-center h-full px-4">
-            <div className="text-center max-w-md">
-              <div className="mx-auto mb-6">
+          <div className="flex items-center justify-center w-full min-h-full px-4 py-8">
+            <div className="text-center max-w-lg mx-auto">
+              <div className="flex justify-center mb-8">
                 <Logo size="xl" showText={false} />
               </div>
-              <h2 className="text-2xl font-semibold mb-4">Hello! How can I assist you today?</h2>
-              <p className="text-gray-400">
+              <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-white">
+                Hello! How can I assist you today?
+              </h2>
+              <p className="text-gray-400 text-lg leading-relaxed">
                 I'm here to explain complex topics in simple terms using real-world analogies. Ask me anything!
               </p>
             </div>
           </div>
         ) : (
-          <div className="py-4">
-            {messages.map((message) => (
-              <ChatMessageBubble key={message.id} message={message} />
-            ))}
-            {isLoading && (
-              <div className="chat-message">
-                <div className="flex-shrink-0">
-                  <Logo size="md" showText={false} />
-                </div>
-                <div className="chat-bubble bg-chat-bot text-gray-300">
-                  <div className="flex items-center space-x-1">
-                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
-                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+          <div className="w-full">
+            <div className="py-4">
+              {messages.map((message) => (
+                <ChatMessageBubble key={message.id} message={message} />
+              ))}
+              {isLoading && (
+                <div className="chat-message">
+                  <div className="flex-shrink-0">
+                    <Logo size="md" showText={false} />
+                  </div>
+                  <div className="chat-bubble bg-chat-bot text-gray-300">
+                    <div className="flex items-center space-x-1">
+                      <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
+                      <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                      <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            )}
-            <div ref={messagesEndRef} />
+              )}
+              <div ref={messagesEndRef} />
+            </div>
           </div>
         )}
       </div>
