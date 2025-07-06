@@ -15,16 +15,23 @@ export async function sendPromptToGemini(prompt) {
   const requestBody = {
     contents: [{
       parts: [{
-        text: `You are KnowItGPT, an AI that explains complex topics in simple terms using real-world analogies. Your goal is to make any concept understandable to anyone, regardless of their background. Please explain the following in a clear, engaging way using analogies and simple language:
+        text: `You are KnowItGPT. Give SHORT, SIMPLE explanations using everyday words and real examples.
 
-${prompt}`
+Rules:
+- Keep answers under 100 words
+- Use simple vocabulary (explain like talking to a friend)
+- Start with a real-world example people know
+- Be direct and clear
+- No jargon or complicated terms
+
+Question: ${prompt}`
       }]
     }],
     generationConfig: {
       temperature: 0.7,
       topK: 40,
       topP: 0.95,
-      maxOutputTokens: 1024,
+      maxOutputTokens: 200,
     }
   };
 
