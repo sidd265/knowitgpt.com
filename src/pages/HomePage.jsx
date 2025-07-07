@@ -4,7 +4,7 @@ import Logo from '../components/Logo';
 
 const HomePage = () => {
   const [inputValue, setInputValue] = useState('');
-  const [showVideoBackground, setShowVideoBackground] = useState(true); // Toggle for video background
+  const [showImageBackground, setShowImageBackground] = useState(true); // Toggle for image background
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -20,19 +20,16 @@ const HomePage = () => {
 
   return (
     <div className="min-h-screen bg-mountain-gradient relative overflow-hidden">
-      {/* Video Background */}
-      {showVideoBackground && (
+      {/* Image Background */}
+      {showImageBackground && (
         <div className="absolute inset-0 z-0">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover"
-          >
-            <source src="/background-video.mp4" type="video/mp4" />
-          </video>
-          {/* Video overlay for better text readability */}
+          <div 
+            className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: `url('/Futuristic Architectural Night Scene.png')`
+            }}
+          ></div>
+          {/* Image overlay for better text readability */}
           <div className="absolute inset-0 bg-black bg-opacity-40"></div>
         </div>
       )}
@@ -60,13 +57,13 @@ const HomePage = () => {
 
           {/* Action Buttons */}
           <div className="flex items-center space-x-4">
-            {/* Video Background Toggle */}
+            {/* Image Background Toggle */}
             <button 
-              onClick={() => setShowVideoBackground(!showVideoBackground)}
+              onClick={() => setShowImageBackground(!showImageBackground)}
               className="text-white hover:text-opacity-80 transition-colors text-sm"
-              title={showVideoBackground ? "Switch to gradient background" : "Switch to video background"}
+              title={showImageBackground ? "Switch to gradient background" : "Switch to image background"}
             >
-              {showVideoBackground ? "📹" : "🎨"}
+              {showImageBackground ? "🖼️" : "🎨"}
             </button>
             <button 
               onClick={() => navigate('/chat')}
