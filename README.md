@@ -7,7 +7,7 @@
 
 KnowItGPT is a production-grade AI chatbot built with React and TailwindCSS that explains complex topics in simple terms using real-world analogies. Powered by Google's Gemini AI, it delivers lightning-fast explanations that anyone can understand.
 
-🌟 **[Live Demo](https://knowitgpt.vercel.app)** | 📖 **[Documentation](#-quick-start)** | 🚀 **[Deploy Now](#-deployment)**
+🌟 **[Live Demo](https://knowitgpt.com)** | 📖 **[Documentation](#-quick-start)** | 🚀 **[Deploy Now](#-deployment)**
 
 ## ✨ Features
 
