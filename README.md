@@ -2,12 +2,11 @@
 
 **Smart Answers. Super Simple.** 
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/sidd265/knowitgptmistral)
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/sidd265/knowitgptmistral)
+
 
 KnowItGPT is a production-grade AI chatbot built with React and TailwindCSS that explains complex topics in simple terms using real-world analogies. Powered by Google's Gemini AI, it delivers lightning-fast explanations that anyone can understand.
 
-🌟 **[Live Demo](https://knowitgpt.com)** | 📖 **[Documentation](#-quick-start)** | 🚀 **[Deploy Now](#-deployment)**
+**[Live Demo](https://knowitgpt.com)** | 📖 **[Documentation](#-quick-start)** | **[Deploy Now](#-deployment)**
 
 ## ✨ Features
 
@@ -137,10 +136,6 @@ The app is fully responsive with:
 
 ## 🚀 Deployment
 
-### One-Click Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/sidd265/knowitgptmistral)
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/sidd265/knowitgptmistral)
 
 ### Manual Deployment
 
@@ -203,7 +198,7 @@ Potential features to add:
 - **Voice Input**: Speech-to-text functionality
 - **Export Chats**: PDF or text export options
 
-## 🤝 Contributing
+##  Contributing
 
 1. Fork the repository
 2. Create a feature branch: `git checkout -b feature-name`
@@ -211,11 +206,11 @@ Potential features to add:
 4. Push to branch: `git push origin feature-name`
 5. Submit a pull request
 
-## 📄 License
+##  License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙋‍♂️ Support
+## Support
 
 For questions or issues:
 - Create an issue in the GitHub repository
